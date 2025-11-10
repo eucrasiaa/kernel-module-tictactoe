@@ -1,0 +1,3 @@
+sudo insmod (file).ko
+
+sudo rmmod (modulename)
