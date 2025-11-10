@@ -1,43 +1,26 @@
 ## Student Information
-- Name: your-name
-- Email: your-umbc-email
-- Student ID: student-id
-- Class Section: section-number
+- Name: Will C
 
 ## Project Description
-A high-level description of what this project does, and how it does it.
-
-## How to Configure, Compile, and Install the Custom Kernel
-1. step one
-2. step two
-3. step three
-... and so forth
+this project is a kernel module, using the character device and file operations to create a tic-tac-toe game interatable with using the /dev/wtictactoe file. write to it with echo "command" > /dev/wtictactoe
+read from it with cat /dev/wtictactoe to see the result 
+you play against a bot, so take turns with it. play nice!
 
 ## How to Compile and Run the Proof-of-Concept Userspace Program
-1. step one
-2. step two
-3. step three
-... and so forth
-
-
-## How to Compile and Run the Testing Suite Userspace Program
-1. step one
-2. step two
-3. step three
-... and so forth
-
+1. use the included makefile to compile the kernel module
+2. just "make" will do it
+3. then "sudo insmod kernelgame.ko" to insert the compiled kernel module into the kernel
+4. to remove the module, use "sudo rmmod kernelgame"
+5. MODULE IS NAMED wtictactoe !!!
 
 ## Known Project Issues
-1. Issue One
-2. Issue Two
-3. Issue Three
-... and so forth
+sometimes newlines arent printed correctly but it should work most of the time?
+also. TONs of logging to printk so easy to backtrace
+a lot was written on my IPAD ssh'd into a chromebox so thats why the formatting can be a little odd, and also the inconsistant git commits. sorry!
 
 ## LLM/AI Prompts Used
-1. prompt 1: <how you used it>
-2. prompt 2: <how you used it>
-3. prompt 3: <how you used it>
-... and so forth
+NONE!!!
+
 
 ## Sources Used
 1. https://tldp.org/LDP/lkmpg/2.4/html/c577.htm
@@ -48,3 +31,5 @@ A high-level description of what this project does, and how it does it.
     filesystem stuff, mostly in the pursuit of getting it to appear in /dev/ 
 4. https://cplusplus.com/reference/cstdio/snprintf/
     for the baord formatting, 
+5. https://github.com/torvalds/linux/blob/master/drivers/char/random.c 
+    i didnt know the function for random kernel so i just referenced what i was actually importing 
